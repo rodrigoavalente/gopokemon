@@ -9,10 +9,21 @@ type PokemonData struct {
 	Name       string `json:"name"`
 	PokedexID  int    `json:"pkdx_id"`
 	NationalID int    `json:"national_id"`
+	Species    string `json:"species"`
 	Weight     string `json:"weight"`
 	Types      []struct {
 		Name string `json:"name"`
 	} `json:"types"`
+	Evolutions []struct {
+		Level       int    `json:"level"`
+		Method      string `json:"method"`
+		To          string `json:"to"`
+		ResourceURI string `json:"resource_uri"`
+	}
+	Descriptions []struct {
+		Name        string `json:"name"`
+		ResourceURI string `json:"resource_uri"`
+	}
 }
 
 func QueryPokemon(pokemon_id string) (PokemonData, error) {
