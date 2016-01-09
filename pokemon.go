@@ -8,6 +8,9 @@ import (
 type PokemonData struct {
 	Name       string `json:"name"`
 	NationalID int    `json:"national_id"`
+	Types      []struct {
+		Name string `json:"name"`
+	} `json:"types"`
 }
 
 func QueryPokemon(pokemon_id string) (PokemonData, error) {
