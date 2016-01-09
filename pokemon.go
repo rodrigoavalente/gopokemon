@@ -7,7 +7,9 @@ import (
 
 type PokemonData struct {
 	Name       string `json:"name"`
+	PokedexID  int    `json:"pkdx_id"`
 	NationalID int    `json:"national_id"`
+	Weight     string `json:"weight"`
 	Types      []struct {
 		Name string `json:"name"`
 	} `json:"types"`
